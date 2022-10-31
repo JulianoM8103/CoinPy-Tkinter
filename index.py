@@ -166,15 +166,13 @@ class Ethereums(Tk):
 
     def close(self):
         self.destroy()
-        Index()
-
 
 class Litecoine(Tk):
 
     def __init__(self):
         Tk.__init__(self)
 
-        self.title("Litecoin Price")
+        self.title("Litecoine Price")
         self.geometry("500x200")
 
         self.window()
@@ -207,49 +205,6 @@ class Litecoine(Tk):
 
     def close(self):
         self.destroy()
-        Index()
-
-
-class Litecoins(Tk):
-
-    def __init__(self):
-        Tk.__init__(self)
-
-        self.title("Litecoin Price")
-        self.geometry("500x200")
-
-        self.window()
-
-    def window(self):
-        menu = Menu(self)
-
-        menu.add_command(label="Accueil", command=self.close)
-        menu.add_command(label="Quitter", command=quit)
-
-        label = Label(self, text="Le prix du Litecoin est de " +
-                      str(self.getBTCPrice()) + "$")
-        label.pack()
-
-        self.config(menu=menu)
-        self.mainloop()
-
-    def getBTCPrice(self):
-        key = "https://api.binance.com/api/v3/ticker/price?symbol="
-        currencies = ["LTCUSDT"]
-        j = 0
-        for i in currencies:
-            url = key + currencies[j]
-        data = requests.get(url)
-        data = data.json()
-        j = j + 1
-
-        print("Récupération du prix du Litecoin")
-        return round(float(data['price']))
-
-    def close(self):
-        self.destroy()
-        Index()
-
 
 class Index(Tk):
 
@@ -269,9 +224,8 @@ class Index(Tk):
         menu.add_command(label="Bitcoin ($)", command=self.bitcoins)
         menu.add_command(label="Ethereum (€)", command=self.ethereume)
         menu.add_command(label="Ethereum ($)", command=self.ethereums)
-        menu.add_command(label="Litecoin (€)", command=self.litecoine)
-        menu.add_command(label="Litecoin ($)", command=self.litecoins)
-
+        menu.add_command(label="Aptos (€)", command=self.aptose)
+        
         self.config(menu=menu)
         self.mainloop()
 
@@ -291,14 +245,9 @@ class Index(Tk):
         self.destroy()
         Ethereums()
 
-    def litecoine(self):
+    def aptose(self):
         self.destroy()
-        Litecoine
-
-    def litecoins(self):
-        self.destroy
-        Litecoins
-
+        Aptose
 
 print("Chargement de la page d'Accueil..")
 window = Index()
