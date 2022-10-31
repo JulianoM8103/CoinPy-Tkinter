@@ -14,7 +14,7 @@ options = {
 setup(
     name = "CoinPy",
     options = options,
-    version = "0.0.2",
+    version = "0.1.0",
     description = 'La version Alpha de CoinPy',
     executables = executables
 )
