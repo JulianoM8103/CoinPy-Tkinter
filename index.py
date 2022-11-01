@@ -1,9 +1,9 @@
 # Chargement des modules
+print("Chargement des modules..")
 from tkinter import *
 import requests
 from tkinter.messagebox import *
-print("Chargement des modules..")
-
+print("Modules chargés !")
 
 class Bitcoine(Tk):
 
